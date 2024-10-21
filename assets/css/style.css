@@ -103,9 +103,9 @@ Hearder
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
-*/
-.navbar {
+ * Desktop Navigation 
+ */
+ .navbar {
   padding: 0;
 }
 
@@ -129,16 +129,16 @@ Hearder
   padding: 10px 0 10px 30px;
   font-family: "Roboto", sans-serif;
   font-size: 13px;
-  color: #ffff;
+  color: #fff;
   white-space: nowrap;
   transition: 0.3s;
   text-transform: uppercase;
   font-weight: 500;
 }
 
-/**-----------------------------------------------------------
-mobile nav toggle
--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Mobile Navigation
+--------------------------------------------------------------*/
 .mobile-nav-toggle {
   color: #fff;
   font-size: 28px;
@@ -147,17 +147,67 @@ mobile nav toggle
   line-height: 0;
   transition: 0.5s;
 }
-.mobile-nav-toggle.bi-x{
+
+.mobile-nav-toggle.bi-x {
   color: #fff;
 }
-@media(max-width:992px){
-  .mobile-nav-toggle{
+
+@media (max-width: 992px) {
+  /* Show mobile toggle button */
+  .mobile-nav-toggle {
     display: block;
   }
-  .navbar ul{
+
+  /* Hide desktop nav menu */
+  .navbar ul {
     display: none;
   }
+
+  /* Mobile navbar styling */
+  .navbar.navbar-mobile {
+    background-color: #1c54bdef; /* Set background color */
+    position: fixed; /* Fix the navbar */
+    top: 0;
+    left: 0;
+    width: 50%; /* Occupy 50% of the screen width */
+    height: 100%; /* Full height */
+    padding: 20px;
+    z-index: 999; /* On top of other elements */
+    display: block;
+    transition: 0.3s; /* Smooth transition */
+  }
+
+  /* Style for the mobile nav items */
+  .navbar ul {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Show navbar when toggled */
+  .navbar-mobile ul {
+    display: block;
+  }
+
+  /* Styling for nav items */
+  .navbar a {
+    display: block;
+    padding: 15px 20px;
+    font-size: 16px;
+  }
+
+  /* Hover effect */
+  .navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+
+  /* Prevent scrolling when navbar is active */
+  body.navbar-mobile-active {
+    overflow: hidden;
+  }
 }
+
 
 
 /*--------------------------------------------------------------
